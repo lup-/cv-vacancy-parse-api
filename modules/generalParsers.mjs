@@ -411,10 +411,10 @@ function extractHashtags(text) {
         : false;
 }
 function extractAts(text) {
-    let atRegex = /@[a-z0-9\._]+/gi;
+    let atRegex = /(?<!\S)@[a-z0-9\._]+/gi;
     let ats = text.match(atRegex);
     return ats && ats.length > 0
-        ? ats.map(at => at.trim())
+        ? ats.filter(at => at !== '@page').map(at => at.trim())
         : false;
 }
 

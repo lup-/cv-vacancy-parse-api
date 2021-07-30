@@ -21,5 +21,5 @@ WORKDIR /opt/server
 RUN npm install
 EXPOSE 3001
 
-CMD [ "node", "server.mjs" ]
+CMD [ "node", "--inspect=0.0.0.0", "server.mjs" ]
 
